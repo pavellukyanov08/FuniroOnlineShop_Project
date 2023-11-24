@@ -20,8 +20,6 @@
 
 :heavy_check_mark: Восстановление пароля от личного кабинета
 
-:heavy_check_mark: 
-
 ## Установка проекта:
 ```bash
 git clone https://github.com/pavellukyanov08/FuniroOnlineShop_Project.git
