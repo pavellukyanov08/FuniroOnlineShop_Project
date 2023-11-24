@@ -1,0 +1,104 @@
+{% extends 'main_page/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/home_page.css' %}">
+{% endblock %}
+
+<title>{% block title %}Home{% endblock %}</title>
+
+{% block content %}
+    <section class="home-page">
+        <div class="home-content container">
+            <div class="slogan">
+                <div class="high-quality">
+                    <h1>Funiro.</h1>
+                    <p>
+                        <b>–</b> команда талантливых дизайнеров и мастеров. Мы предлагаем вам лучшие решения из мира
+                        дизайнерской мебели.
+                    </p>
+
+                    <p><b>Наша цель</b> – сделать интерьеры уникальными,
+                        отражая вашу индивидуальность и стиль.</p>
+
+                    <div class="go-shop">
+                        <a class="go-shop-link" href="{% url 'main_page:index' %}">Купить сейчас!</a>
+                    </div>
+                </div>
+
+                <img src="{% static 'home_page/back-img-1.png' %}" alt="Изображение заднего фона">
+            </div>
+
+            <div class="our_advantages">
+                <div class="quality advantages">
+                    <div class="quality-img img">
+                        <img src="{% static 'home_page/high-quality.svg' %}" alt="качество">
+                    </div>
+
+                    <div class="info">
+                        <h3>Изготовлено
+                        </h3>
+                        <span>Из высококачественных материалов</span>
+                    </div>
+                </div>
+
+                <div class="warranty_protection advantages">
+                    <div class="warranty-img img">
+                        <img src="{% static 'home_page/warranty_protection.svg' %}" alt="гарантия">
+                    </div>
+
+                    <div class="info">
+                        <h3>Гарантийная защита</h3>
+                        <span>Более 2-х лет</span>
+                    </div>
+                </div>
+
+                <div class="free_shipping advantages">
+                    <div class="shipping-img img">
+                        <img src="{% static 'home_page/free_shipping.svg' %}" alt="доставка">
+                    </div>
+
+                    <div class="info">
+                        <h3>Бесплатная доставка</h3>
+                        <span>При заказе от 15 000</span>
+                    </div>
+
+                </div>
+
+                <div class="support advantages">
+                    <div class="support-img img">
+                        <img src="{% static 'home_page/support.svg' %}" alt="доставка">
+                    </div>
+
+                    <div class="info">
+                        <h3>Специальная поддержка</h3>
+                        <span>24 / 7</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="furniro-choose">Почему выбирают Funiro?</h3>
+
+            <div class="why-choose-us">
+
+                <div class="list_advantages">
+                    <ul>
+                        <li>Эксклюзивный дизайн: тщательно разрабатываем каждую модель, чтобы она сочетала в себе красоту,
+                            функциональность и инновации.</li>
+                        <li>Индивидуальный подход: мы работаем с вами, чтобы создать мебель, идеально подходящую именно вам.</li>
+                    </ul>
+                </div>
+
+                <div class="list_advantages">
+                    <ul>
+                        <li>Широкий ассортимент: наша мебель подойдет для любого стиля и бюджета,
+                            от современных шедевров до классических произведений искусства.</li>
+                        <li>Доставка и установка: привезем и установим. Вам не стоит ни о чем беспокоиться</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+{% endblock %}

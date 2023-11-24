@@ -1,0 +1,41 @@
+{% extends 'main_page/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/authentication-form.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2>Авторизация</h2>
+
+    <section>
+        <div class="content container">
+            <div class="auth-block">
+                <form method="post" class="auth-form">
+                    {% csrf_token %}
+
+                    <p>
+                        <label for="id_username">Имя пользователя:</label>
+                        <input type="text" name="username" maxlength="100" id="id_username">
+                    </p>
+
+                    <p>
+                        <label for="id_password">Пароль:</label>
+                        <input type="password" name="password" maxlength="100" id="id_password">
+                    </p>
+
+                    <div class="button">
+                        <button class="auth-btn">Авторизоваться</button>
+                    </div>
+
+                    <div class="error">
+                        {{ error }}
+                    </div>
+                </form>
+
+                <p class="signup-link">Не имеете аккаунта? <a href="{% url 'signup' %}">Зарегистрируйтесь!</a></p>
+                <p class="reset-pass-link"> <a href="{% url 'reset_password' %}">Забыли пароль?</a></p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
