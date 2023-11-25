@@ -1,0 +1,213 @@
+h2 {
+    text-align: center;
+    padding: 30px 0 30px 0;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.edit-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    /*background-color: rgba(176, 196, 222, 0.75);*/
+    border: 3px dashed black;
+}
+
+.edit-form {
+    width: 600px;
+    font-size: 20px;
+    border-radius: 7px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.edit-form select {
+    width: 100px;
+}
+
+.edit-form label {
+    margin: 0 0 7px 0;
+}
+
+.edit-form input, textarea {
+    padding: 5px;
+    width: 100%;
+    border: 1px solid black;
+    margin: 7px 0 0 0;
+    height: 30px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.edit-form textarea {
+    height: 70px;
+}
+
+.edit-form > * {
+    padding: 10px 0 10px 0;
+}
+
+.control-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.control-buttons .button {
+    text-align: center;
+    width: 100%;
+}
+
+.save-btn, .del-btn {
+    width: 100%;
+    font-size: 17px;
+    padding: 7px;
+    border-radius: 7px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.save-btn {
+    color: black;
+}
+
+.save-btn:hover {
+    background-color: #309a30;
+}
+
+.del-btn {
+    color: black;
+}
+
+.del-btn:hover {
+    background-color: lightcoral;
+}
+
+
+/* Feedback style block */
+.view-product {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.specific-product-table {
+    width: 100%;
+    margin: 0 0 0 30px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 7px;
+}
+
+.feedback-content {
+    margin-top: 50px;
+    /*border-top: 1px solid black;*/
+}
+
+.feedback-content h2 {
+    text-align: center;
+    padding: 0 0 20px 0;
+}
+
+.feedback_info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.feedback-rating {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.form_field label, select {
+    width: 100%;
+}
+
+.form_field h3 {
+    padding: 0 0 7px 0;
+}
+
+.form_field textarea {
+    width: 500px;
+}
+
+.form_field select {
+    height: 30px;
+}
+
+.leave-button {
+    margin-top: 15px;
+}
+
+.leave-review-btn {
+    padding: 7px 5px 7px 5px;
+    font-size: 17px;
+}
+
+.feedback-wrapper {
+    margin-top: 30px;
+    padding: 15px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 10px;
+}
+
+.feedbacks-tape {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.feedback__item {
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 0 15px 15px 0;
+    width: 450px;
+    line-height: 1.5;
+}
+
+.avatar-block {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.avatar-block  .feedback-username {
+    font-size: 23px;
+}
+
+.avatar-block > *:not(:last-child) {
+    margin-right: 10px;
+}
+
+
+.avatar-block img {
+    border-radius: 100%;
+}
+
+.feedback-description {
+    margin-bottom: 15px;
+}
+
+.feedback-description p {
+    font-size: 20px;
+}
+
+
