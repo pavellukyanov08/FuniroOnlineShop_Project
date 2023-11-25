@@ -6,8 +6,8 @@
 </div>
 
 ## Предпросмотр главной страницы и страницы с продуктами
-![Screenshot](static/base/funiro-img-preview.png)
-![Screenshot](static/base/funiro-product-preview.png)
+![Screenshot](static/base/homepage-preview.png)
+![Screenshot](static/base/product-preview.png)
 
 ## Сайт разработан с помощью:
 + ***Python/Django***
