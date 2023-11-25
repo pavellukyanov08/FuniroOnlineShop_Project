@@ -105,10 +105,12 @@ def product_detail(request, prod_id, slug):
     if request.user.is_staff or request.user.is_superuser:
         if request.method == 'GET':
             form_prod = ProductForm(instance=product)
+            user_reviews = product.review_set.all()
 
             context = {
                 'menu': menu,
                 'product': product,
+                'user_reviews': user_reviews,
                 'form_prod': form_prod,
                 'cart_prods_counter': cart_prods_counter,
                 'favourite_prods_counter': favourite_prods_counter,

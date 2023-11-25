@@ -97,8 +97,8 @@ class Product(models.Model):
 
 class Review(models.Model):
     VOTE_TYPE = (
-        ('За', 'Голос за'),
-        ('Против', 'Голос против')
+        ('👍 (За)', 'Голос за'),
+        ('👎 (Против)', 'Голос против')
     )
 
     owner = models.ForeignKey(Profile, on_delete=models.CASCADE, verbose_name='Автор')

@@ -35,4 +35,38 @@
             </div>
         </div>
     </section>
+
+    <section class="feedback-content">
+        <h2 class="container">Отзывы</h2>
+
+        <div class="feedback_info container">
+            <h3 class="feedback-rating">
+                {{ product.vote_ratio }}% Положительных отзывов
+                ({{ product.vote_total }} Vote{{ product.vote_total | pluralize:'s' }})
+            </h3>
+        </div>
+
+        <div class="feedback-wrapper container">
+            <div class="feedbacks-tape">
+                {% for review in user_reviews %}
+                    {% if review.body %}
+                        <div class="feedback__item">
+                            <div class="avatar-block">
+                                <img src="{{ review.owner.img.url }}" height="50" width="50" alt="Фото профиля">
+                                <p class="feedback-username"><b>{{ review.owner }}</b></p>
+                            </div>
+
+                            <div class="feedback-description">
+                                <p class="feedback-body"><b>{{ review.body | linebreaksbr }}</b></p>
+                            </div>
+
+                            <div class="feedback-vote">
+                                <p class="feedback-vote">Голос: <b>{{ review.value }}</b></p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 {% endblock %}
