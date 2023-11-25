@@ -2,96 +2,96 @@
 {% load static %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/view_prod.css' %}">
+    <link rel="stylesheet" href="{% static 'css/view_prod.css' %}">
 {% endblock %}
 
 {% block content %}
-<h1>Просмотр товара: <b>{{ product.name }}</b></h1>
+    <h1>Просмотр товара: <b>{{ product.name }}</b></h1>
 
-<section class="content">
-    <div class="view-product">
-        <div class="prod-img">
-            <img src="{{ product.img.url }}" alt="">
-        </div>
-
-        <table class="specific-product-table">
-            <thead>
-            <tr class="row-titles">
-                <th class="product-name">Наименование</th>
-                <th class="product-price">Цена (руб)</th>
-                <th class="product-width">Ширина (см)</th>
-                <th class="product-height">Высота (см)</th>
-                <th class="product-weight">Вес (кг)</th>
-                <th class="product-remove"></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><p>{{ product.name }}</p></td>
-                <td><p>{{ product.price }}</p></td>
-                <td><p>{{ product.width }}</p></td>
-                <td><p>{{ product.height }}</p></td>
-                <td><p>{{ product.weight }}</p></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<section class="feedback-content">
-    <h2 class="container">Отзывы</h2>
-
-    <div class="feedback_info container">
-        <h3 class="feedback-rating">
-            {{ product.vote_ratio }}% Положительных отзывов
-            ({{ product.vote_total }} Vote{{ product.vote_total | pluralize:'s' }})
-        </h3>
-
-        <div class="create-feedback">
-            {% if request.user.profile.id in product.reviewers %}
-            <p>Вы уже оставили свой отзыв на этот продукт</p>
-            {% elif request.user.is_authenticated %}
-            <form class="form" action="{% url 'main_page:product_detail' product.id product.slug %}" method="POST">
-                {% csrf_token %}
-
-                {% for field in form_review %}
-                <div class="form_field">
-                    <h3>{{ field.label }}</h3>
-                    <p>{{ field }}</p>
-                </div>
-                {% endfor %}
-
-                <div class="leave-button">
-                    <button class="leave-review-btn" type="submit">Оставить отзыв</button>
-                </div>
-            </form>
-            {% else %}
-            <a href="{% url 'login' %}"></a>
-            {% endif %}
-        </div>
-    </div>
-
-
-    <div class="feedback-wrapper container">
-        <div class="feedbacks-tape">
-            {% for review in user_reviews %}
-            {% if review.body %}
-            <div class="feedback__item">
-                <div class="avatar-block">
-                    <img src="{{ review.owner.img.url }}" height="50" width="50" alt="Фото профиля">
-                </div>
-
-                <div class="feedback-description">
-                    <p class="feedback-user">Пользователь: <b>{{ review.owner }}</b></p>
-
-                    <p class="feedback-body">Отзыв: <b>{{ review.body | linebreaksbr }}</b></p>
-
-                    <p class="feedback-vote">Голос: <b>{{ review.value }}</b></p>
-                </div>
+    <section class="content">
+        <div class="view-product">
+            <div class="prod-img">
+                <img src="{{ product.img.url }}" alt="">
             </div>
-            {% endif %}
-            {% endfor %}
+
+            <table class="specific-product-table">
+                <thead>
+                <tr class="row-titles">
+                    <th class="product-name">Наименование</th>
+                    <th class="product-price">Цена (руб)</th>
+                    <th class="product-width">Ширина (см)</th>
+                    <th class="product-height">Высота (см)</th>
+                    <th class="product-weight">Вес (кг)</th>
+                    <th class="product-remove"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><p>{{ product.name }}</p></td>
+                    <td><p>{{ product.price }}</p></td>
+                    <td><p>{{ product.width }}</p></td>
+                    <td><p>{{ product.height }}</p></td>
+                    <td><p>{{ product.weight }}</p></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section class="feedback-content">
+        <h2 class="container">Отзывы</h2>
+
+        <div class="feedback_info container">
+            <h3 class="feedback-rating">
+                {{ product.vote_ratio }}% Положительных отзывов
+                ({{ product.vote_total }} Vote{{ product.vote_total | pluralize:'s' }})
+            </h3>
+
+            <div class="create-feedback">
+                {% if request.user.profile.id in product.reviewers %}
+                    <p>Вы уже оставили свой отзыв на этот продукт</p>
+                {% elif request.user.is_authenticated %}
+                    <form class="form" action="{% url 'main_page:product_detail' product.id product.slug %}" method="POST">
+                        {% csrf_token %}
+
+                        {% for field in form_review %}
+                            <div class="form_field">
+                                <h3>{{ field.label }}</h3>
+                                <p>{{ field }}</p>
+                            </div>
+                        {% endfor %}
+
+                        <div class="leave-button">
+                            <button class="leave-review-btn" type="submit">Оставить отзыв</button>
+                        </div>
+                    </form>
+                {% else %}
+                    <a href="{% url 'login' %}"></a>
+                {% endif %}
+            </div>
+        </div>
+
+
+        <div class="feedback-wrapper container">
+            <div class="feedbacks-tape">
+                {% for review in user_reviews %}
+                    {% if review.body %}
+                        <div class="feedback__item">
+                            <div class="avatar-block">
+                                <img src="{{ review.owner.img.url }}" height="50" width="50" alt="Фото профиля">
+                            </div>
+
+                            <div class="feedback-description">
+                                <p class="feedback-user">Пользователь: <b>{{ review.owner }}</b></p>
+
+                                <p class="feedback-body">Отзыв: <b>{{ review.body | linebreaksbr }}</b></p>
+
+                                <p class="feedback-vote">Голос: <b>{{ review.value }}</b></p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 {% endblock %}
